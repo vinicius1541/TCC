@@ -1,0 +1,2 @@
+se der erro de conexao, tentar:
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '02052000';

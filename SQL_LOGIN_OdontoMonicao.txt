@@ -1,0 +1,25 @@
+id
+login
+senha
+ativo
+nivel_acesso
+  - 0 : acesso negado 
+  - 1 : acesso funcionarios
+  - 2 : acesso TOTAL
+PRIMEIRO INSERT NA MAO:
+INSERT INTO usuarios(login, senha, ativo, nivel_acesso) VALUES('viniciusm',md5('02052000'), true, 2);
+COMANDO SQL USADO:
+CREATE TABLE `odonto_monicao`.`usuarios` (
+  `usuario_id` INT NOT NULL AUTO_INCREMENT,
+  `login` VARCHAR(200) NOT NULL,
+  `senha` VARCHAR(32) NOT NULL,
+  `ativo` TINYINT(1) NOT NULL,
+  `nivel_acesso` INT NOT NULL,
+  PRIMARY KEY (`usuario_id`),
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC) VISIBLE);
+
+
+data_criacao ** incrementar depois
+data_saida ** incrementar depois
+nome_completo ** incrementar depois
+email ** incrementar depois(numa outra tabela(chamada funcionarios, por ex))
