@@ -1,3 +1,4 @@
+
 <?php
     session_start();
 ?>
@@ -13,6 +14,7 @@
 </head>
 
 <body class="fundo">
+    <?php include('connectDB.php');?>
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
