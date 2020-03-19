@@ -76,7 +76,9 @@
       color: #fff;
       padding: 10px;
     }
-    
+    li{
+        list-style: none;
+    }
     #sidebar ul li a {
       padding: 10px;
       font-size: 1.1em;
@@ -162,9 +164,15 @@
 /*==============================================================================================================*/
 #sticky-footer {
     position: fixed;
-    height: 75px;
+    height: auto;
     bottom: 0;
     width: 100%;
+}
+@media (min-width: 0px) and (max-width: 950px){
+  #sticky-footer { 
+      display : none; 
+      visibility : hidden; 
+  }
 }
 .my-btn{
     background-color: rgba(0,105,217,0.2);

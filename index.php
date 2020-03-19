@@ -15,7 +15,6 @@
 </head>
 
 <body class="fundo">
-    <?php include('connectDB.php');?>
     <div class="container">
         <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
@@ -25,7 +24,7 @@
                         if(isset($_SESSION['nao_autenticado'])){
                             echo "<div class='alert alert-danger'><p>ERRO: Usuário e/ou Senha incorretos</p></div>";
                         }
-                    unset($_SESSION['nao_autenticado']);
+                        unset($_SESSION['nao_autenticado']);
                     ?>
                         <h5 class="card-title text-center">Login</h5>
                         <form class="form-signin" action="login.php" method="POST">
@@ -46,7 +45,7 @@
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </body>
 
