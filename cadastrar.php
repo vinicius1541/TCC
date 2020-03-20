@@ -1,5 +1,9 @@
 <?php
 include('view/header.php');
+if($_SESSION['nivelacesso'] != 2){
+    header('Location: logged.php');
+    exit;
+}
 ?>
 
 <div class="container">
