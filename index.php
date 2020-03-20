@@ -1,7 +1,9 @@
 
 <?php
     session_start();
-
+    if(isset($_SESSION['usuario'])){
+        header('Location: logged.php');
+    }else{
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,3 +52,4 @@
 </body>
 
 </html>
+<?php }?>
