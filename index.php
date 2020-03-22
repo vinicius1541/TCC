@@ -1,10 +1,10 @@
-
 <?php
     session_start();
     if(isset($_SESSION['usuario'])){
-        header('Location: logged.php');
+        header('Location: customers/logged.php');
     }else{
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,6 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="../js/main.js"></script>
+    <link href="css/font-awesome.win.css" rel="stylesheet">    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <title>Monicao S/A</title>
 </head>
 
@@ -29,7 +32,7 @@
                         unset($_SESSION['nao_autenticado']);
                     ?>
                         <h5 class="card-title text-center">Login</h5>
-                        <form class="form-signin" action="login.php" method="POST">
+                        <form class="form-signin" action="logado/login.php" method="POST">
                             <div class="form-label-group">
                                 <input name="usuario" type="text" id="inputUsuario" class="form-control" placeholder="Usuário" autocomplete="off" required autofocus>
                                 <label for="inputUsuario">Usuário</label>
@@ -40,15 +43,15 @@
                                 <label for="inputPassword">Senha</label>
                             </div>
                             <button class="my-btn btn btn-lg btn-primary btn-block text-uppercase" type="submit">Autenticar</button>
-
+                            
                         </form>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    
 </body>
 
 </html>

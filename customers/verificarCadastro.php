@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('connectDB.php');
+include_once '../includes/connectDB.php';
 
 $nome = mysqli_real_escape_string($connection, trim($_POST['nome']));
 $usuario = mysqli_real_escape_string($connection, trim($_POST['usuario']));
@@ -42,7 +42,7 @@ if ($idFuncionario != null) {
 if (!isset($_SESSION['usuario']) || ($_SESSION['nivelacesso'] != 2)) {
     // Destrói a sessão por segurança
     session_destroy();
-    // Redireciona o visitante de volta pro login
+    // Redireciona o visitante de volta pro logged
     header("Location: logged.php");
     exit;
 }

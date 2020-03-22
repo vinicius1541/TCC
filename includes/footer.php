@@ -1,6 +1,6 @@
 <?php
 $paginaLink = $_SERVER['SCRIPT_NAME'];
-if ($paginaLink != '/Login-OdontoMonicao/cadastrar.php') {
+if ($paginaLink != '/OdontoMonicao/customers/cadastrar.php' && $paginaLink != '/OdontoMonicao/customers/listarCadastros.php') {
   echo "
     <footer id='sticky-footer' class='py-4 bg-dark text-white-50'>
       <div class='container text-center'>

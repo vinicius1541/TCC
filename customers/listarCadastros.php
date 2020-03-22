@@ -1,7 +1,8 @@
 <?php
-include('view/header.php');
-include('connectDB.php');
-if($_SESSION['nivelacesso'] != 2){
+include_once '../includes/header.php';
+include_once '../includes/connectDB.php';
+
+if ($_SESSION['nivelacesso'] != 2) {
     header('Location: logged.php');
     exit;
 }
@@ -42,8 +43,11 @@ $resultado = mysqli_query($connection, $sql);
         </tbody>
     </table>
 </div>
+<div class="col text-center">
+    <a href="cadastrar.php"><button type="button" class=" btn btn-secondary btn-lg text-uppercase">Adicionar Funcionário</button></a><br><br><br>
+</div>
 <?php
-include('view/footer.php');
+include_once '../includes/footer.php';
 mysqli_free_result($resultado);
 mysqli_close($connection);
 ?>

@@ -1,6 +1,6 @@
 <?php
 ob_start();
-include('verifyLogin.php');
+include_once '../logado/verifyLogin.php';
 $paginaLink = $_SERVER['SCRIPT_NAME'];
 //print_r($_SESSION['nivelacesso']);
 //echo $paginaLink;
@@ -11,33 +11,35 @@ $paginaLink = $_SERVER['SCRIPT_NAME'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
     <title>Consultório Odonto Monicao</title>
 </head>
 
-<body>
+<body class="fundoLogado">
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="logged.php">Odonto Monicao</a>
-
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item <?php
-                                    if ($paginaLink == '/Login-OdontoMonicao/logged.php') {
-                                        echo 'active';
-                                    }
-                                    ?>">
+                <li class="nav-item 
+                    <?php
+                        if ($paginaLink == '/OdontoMonicao/customers/logged.php') {
+                            echo 'active';
+                        }
+                    ?>">
                     <a class="nav-link" href="logged.php">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <?php if ($_SESSION['nivelacesso'] == 2) : ?>
 
-                    <li class="nav-item dropdown <?php
-                                                    if ($paginaLink == '/Login-OdontoMonicao/cadastrar.php') {
-                                                        echo 'active';
-                                                    }
-                                                    ?>">
+                    <li class="nav-item dropdown 
+                        <?php
+                            if ($paginaLink == '/OdontoMonicao/customers/cadastrar.php' || $paginaLink == '/OdontoMonicao/customers/listarCadastros.php') {
+                                echo 'active';
+                            }
+                        ?>">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Cadastrar
                         </a>
@@ -95,7 +97,7 @@ $paginaLink = $_SERVER['SCRIPT_NAME'];
                                 ?></a>
                             <a class="dropdown-item" href="#">Editar perfil</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="logout.php">Logout</a>
+                            <a class="dropdown-item" href="../logado/logout.php">Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -114,10 +116,10 @@ $paginaLink = $_SERVER['SCRIPT_NAME'];
                 <button type="button" class="btn btn-outline-secondary  btn-sm dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" disabled>Nível de Acesso: <?= "Admin" ?></a>
+                    <a class="dropdown-item" href="#" disabled>Nível de Acesso: </?= "Admin" ?></a>
                     <a class="dropdown-item" href="#" disabled>Editar perfil</a>
                     <div class="dropdown-divider"></div>
-                    <a class=" dropdown-item" href="logout.php">Logout</a>
+                    <a class=" dropdown-item" href="logado/logout.php">Logout</a>
                     <a class="dropdown-item" href="#">Link separado</a>
                 </div>
             </div>

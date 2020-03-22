@@ -187,11 +187,16 @@
   }
   
   .fundo {
+    background-size: cover;
+    background-repeat: no-repeat;
     background-image: url('../img/chair_odonto.jpg');
   }
   .fundoLogado{
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+    /*background: #007bff;
+    background: linear-gradient(to right, #0062E6, #33AEFF);*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../img/tooth.jpg');
   }
   
   .card-signin {

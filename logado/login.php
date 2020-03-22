@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('connectDB.php');
+include_once '../includes/connectDB.php';
 if (empty($_POST['usuario']) || empty($_POST['senha'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 }
 $user = mysqli_real_escape_string($connection, $_POST['usuario']);
@@ -16,10 +16,10 @@ if ($row == 1) {
     $nivelAcesso = mysqli_fetch_assoc($result);
     $_SESSION['nivelacesso'] = $nivelAcesso['nivelacesso_id'];
     //$_SESSION['logado'] = true;
-    header('Location: logged.php');
+    header('Location: ../customers/logged.php');
     exit();
 } else {
     $_SESSION['nao_autenticado'] = true;
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit();
 }
