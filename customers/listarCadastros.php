@@ -23,18 +23,22 @@ $resultado = mysqli_query($connection, $sql);
             </tr>
         </thead>
         <tbody>
-            <?php while ($dados = $resultado->fetch_array()) : ?>
+            <?php while ($dados = mysqli_fetch_array($resultado)) : ?>
                 <tr>
-                    <th scope="row"><?php echo $dados['usuario_id'] ?></th>
-                    <td><?php echo $dados['nome'] ?></td>
-                    <td><?php echo $dados['usuario'] ?></td>
-                    <td><?php echo date('d/m/Y', strtotime($dados['dtEntrada'])); ?></td>
-                    <td><?php echo $dados['celular'] ?></td>
-                    <td><?php echo $dados['endereco'] ?></td>
-                    <td><?php echo $dados['ativo'] == 1 ? "Sim" : "Não"; ?></td>
+                    <th scope="row"><?= $dados['funcionario_id'] ?></th>
+                    <td class="
+                    <?php if($dados['nivelacesso_id'] == 0): 
+                        echo "text-danger";
+                    endif;
+                    ?>"><?php echo $dados['nome']; ?></td>
+                    <td><?= $dados['usuario']; ?></td>
+                    <td><?= date('d/m/Y', strtotime($dados['dtEntrada'])); ?></td>
+                    <td><?= $dados['celular']; ?></td>
+                    <td><?= $dados['endereco']; ?></td>
+                    <td><?= $dados['ativo'] == 1 ? "Sim" : "Não"; ?></td>
                     <td>
-                        <a href="#"><button type="button" class="btn btn-primary">Visualizar</button></a>
-                        <a href="#"><button type="button" class="btn btn-success">Editar</button></a>
+                        <a href="visualizarCadastro.php?id=<?= $dados['funcionario_id'] ?>"><button type="button" class="btn btn-primary">Visualizar</button></a>
+                        <a href="editarCadastro.php?id=<?= $dados['funcionario_id'] ?>"><button type="button" class="btn btn-success">Editar</button></a>
                         <a href="#"><button type="button" class="btn btn-danger">Excluir</button></a>
                     </td>
                 </tr>

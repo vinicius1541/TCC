@@ -46,8 +46,6 @@ $paginaLink = $_SERVER['SCRIPT_NAME'];
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="cadastrar.php">Funcionário(usuário)</a>
                             <a class="dropdown-item" href="listarCadastros.php">Listar cadastros</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Editar cadastros</a>
                         </div>
                     </li>
 
